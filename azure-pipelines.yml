@@ -12,7 +12,13 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'echo ''Hello world'''
+    script: |
+      i=1
+      while [ $i -le 100 ]
+      do
+          echo $i
+          i=`expr $i + 1`
+      done
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
